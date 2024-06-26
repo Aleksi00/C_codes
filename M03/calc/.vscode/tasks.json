@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "make",
+            "windows":{
+                "command": "mingw32-make"
+            },
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+            "problemMatcher": [{
+                "base": "$gcc",
+                "fileLocation": ["relative", "${workspaceFolder}/src"]}
+            ]
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "make clean",
+            "args": [],
+            "windows":{
+                "command": "mingw32-make clean",
+            },
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+            "problemMatcher": [{
+                "base": "$gcc",
+                "fileLocation": ["relative", "${workspaceFolder}/src"]}
+            ]
+        },
+        {
+            "label": "Open Terminal",
+            "type": "shell",
+            "command": "osascript -e 'tell application \"Terminal\"\ndo script \"echo hello\"\nend tell'",
+            "problemMatcher": []
+          }
+    ]
+}
